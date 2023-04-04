@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e6ae93e1-60aa-496c-af4d-4eafe5358b72" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Framework/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Framework/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Framework/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Framework/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Framework/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Framework/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Framework/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Framework/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Framework/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Framework/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Framework/src/main/java/etu2034/framework/servlet/FrontServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Framework/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2NxsKaWKoPVG00RsJzG3D6lBuDN" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e6ae93e1-60aa-496c-af4d-4eafe5358b72" name="Changes" comment="" />
+      <created>1680617004433</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1680617004433</updated>
+      <workItem from="1680617006407" duration="731000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
