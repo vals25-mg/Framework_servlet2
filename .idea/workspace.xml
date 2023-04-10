@@ -4,19 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e6ae93e1-60aa-496c-af4d-4eafe5358b72" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Framework/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Framework/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Framework/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Framework/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Framework/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Framework/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Framework/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Framework/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Framework/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Framework/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Framework/src/main/java/etu2034/framework/servlet/FrontServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Framework/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+    <list default="true" id="e6ae93e1-60aa-496c-af4d-4eafe5358b72" name="Changes" comment="commit sprint2">
+      <change afterPath="$PROJECT_DIR$/Framework/src/main/java/etu2034/framework/MethodAnnotation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Framework/src/main/java/etu2034/framework/objets/Dept.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Framework/src/main/java/etu2034/framework/objets/Emp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Framework/src/main/java/etu2034/framework/objets/mimi.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Framework/src/main/java/etu2034/framework/objets/popo.dodo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Framework/src/main/java/etu2034/framework/Mapping.java" beforeDir="false" afterPath="$PROJECT_DIR$/Framework/src/main/java/etu2034/framework/Mapping.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Framework/src/main/java/etu2034/framework/servlet/FrontServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/Framework/src/main/java/etu2034/framework/servlet/FrontServlet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +22,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="sprint1" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -39,18 +35,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -59,11 +55,50 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1680617004433</updated>
-      <workItem from="1680617006407" duration="731000" />
+      <workItem from="1680617006407" duration="2907000" />
+      <workItem from="1681105691249" duration="612000" />
     </task>
+    <task id="LOCAL-00001" summary="commit sprint1">
+      <created>1680618493845</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1680618493845</updated>
+    </task>
+    <task id="LOCAL-00002" summary="commit sprint1">
+      <created>1680618583343</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1680618583343</updated>
+    </task>
+    <task id="LOCAL-00003" summary="commit sprint2">
+      <created>1680619409571</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1680619409571</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="commit sprint1" />
+    <MESSAGE value="commit sprint2" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit sprint2" />
   </component>
 </project>

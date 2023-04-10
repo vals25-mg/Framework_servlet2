@@ -6,8 +6,10 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 
 public class FrontServlet extends HttpServlet {
@@ -25,10 +27,16 @@ public class FrontServlet extends HttpServlet {
     public void processRequest(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     resp.setContentType("text/html");
         PrintWriter out=resp.getWriter();
+
+//        file directory
+
         String[] separed=req.getRequestURI().split("/");
         out.println("<br>"+req.getRequestURI());
-        for (String letter: separed) {
-         out.println("<br>"+letter);
+        out.println("<br>"+separed[2]);
+        if (MappingUrls.containsKey(separed[2])){
+            Mapping mapping=MappingUrls.get(separed[2]);
+            out.println("<br>Nom de Classe: "+mapping.getClassname()+"=> Methode: "+mapping.getMethod());
+
         }
 
     }
@@ -44,6 +52,13 @@ public class FrontServlet extends HttpServlet {
 
     @Override
     public void init() throws ServletException {
-        super.init();
+        System.out.println("This is init");
+        String  filePath="/Users/valisoa/Documents/GitHub/Project/Framework/src/main/java/etu2034/framework/objets";
+        String package_name="etu2034.framework.objets";
+        try {
+            MappingUrls=Mapping.getAllMapping(filePath,package_name);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 }
