@@ -77,8 +77,9 @@ public class Mapping {
         // Init hashmap
         HashMap<String,Mapping> mappingUrls=new HashMap<>();
         String[] java_files_name=get_java_files_name(filePath);
+        if(!package_name.equals("")) package_name+=".";
         for (int i = 0; i < java_files_name.length; i++) {
-            Class<?> class1=Class.forName(package_name+"."+java_files_name[i]);
+            Class<?> class1=Class.forName(package_name+java_files_name[i]);
             Object object=class1.getDeclaredConstructor().newInstance();
             Method[] methods= object.getClass().getDeclaredMethods();
 
@@ -88,7 +89,7 @@ public class Mapping {
                     System.out.println("--Methods call by their url");
                     String url=methods[j].getAnnotation(MethodAnnotation.class).url();
                     System.out.println(object.getClass().getSimpleName()+": "+methods[j].getName()+",url=>"+url);
-                    mappingUrls.put(url, new Mapping(class1.getSimpleName(), methods[j].getName()));
+                    mappingUrls.put(url, new Mapping(class1.getName(), methods[j].getName()));
                 }
             }
         }
