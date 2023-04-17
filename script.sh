@@ -1,12 +1,13 @@
 
 #L' emplacement qu'on doit utiliser
-cd /Users/valisoa/Documents/GitHub/Project/
+cd /Users/valisoa/Documents/GitHub/Project/Framework/src/main/java/
 pwd
 
 #L'emplacement de chaque fichier java
-FRONT_SERVLET="/Users/valisoa/Documents/GitHub/Project/Framework/src/main/java/etu2034/framework/servlet/FrontServlet.java"
-MAPPING="/Users/valisoa/Documents/GitHub/Project/Framework/src/main/java/etu2034/framework/Mapping.java"
-ANNOTATION="/Users/valisoa/Documents/GitHub/Project/Framework/src/main/java/etu2034/framework/MethodAnnotation.java"
+FRONT_SERVLET="etu2034/framework/servlet/FrontServlet.java"
+MAPPING="etu2034/framework/Mapping.java"
+ANNOTATION="etu2034/framework/MethodAnnotation.java"
+MODELVIEW="etu2034/framework/ModelView.java"
 
 #L'emplacement où on doit placer chaque fichier compilé
 CLASS_DIR="/Users/valisoa/Documents/GitHub/Project/Framework/src/main/java/etu2034/classes/"
@@ -25,9 +26,11 @@ echo "\t - Mapping.java"
 javac -classpath $CLASSPATH:"$CLASS_DIR" -d "$CLASS_DIR" "$MAPPING"
 echo "\t - FrontServlet.java"
 javac -classpath $CLASSPATH:"$CLASS_DIR" -d "$CLASS_DIR" "$FRONT_SERVLET"
-
+echo "\t - ModelView.java"
+javac -classpath $CLASSPATH:"$CLASS_DIR" -d "$CLASS_DIR" "$MODELVIEW"
 #Création fichier jar
-jar -cf $LIB_DIR$JAR_FILE $CLASS_DIR"etu2034"
+cd $CLASS_DIR
+jar -cf $LIB_DIR$JAR_FILE "etu2034"
 echo "Les contenus du fichier $JAR_FILE:"
 jar -tf $LIB_DIR$JAR_FILE
 
@@ -36,6 +39,7 @@ rm -rf CLASS_DIR"*"
 #expoter dans le classpath le fichier framework.jar
 export CLASSPATH=$CLASSPATH:.:$LIB_DIR$JAR_FILE
 
+cd /Users/valisoa/Documents/GitHub/Project/
 #Emplacement du dossier webapps de tomcat
 TOMCAT="/Applications/apache-tomcat-10.0.27/webapps/"
 
@@ -45,8 +49,8 @@ WEBINF="/Users/valisoa/Documents/GitHub/Project/Test_Framework/src/main/webapp/"
 JAVA_FILE="/Users/valisoa/Documents/GitHub/Project/Test_Framework/src/main/java/"
 
 #Compilation du fichier java dans le repertoire Test_Framework
-echo $JAVA_FILE"*.java"
-javac -classpath $CLASSPATH:$WEBAPP -d $WEBAPP $JAVA_FILE"Test.java"
+#echo $JAVA_FILE"*.java"
+javac -classpath $CLASSPATH:$WEBAPP -d $WEBAPP $JAVA_FILE"objets/Test.java"
 
 cd $WEBINF
 pwd
