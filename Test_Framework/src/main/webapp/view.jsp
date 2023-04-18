@@ -12,5 +12,10 @@
 </head>
 <body>
     <h1>Page View</h1>
+    <ul>
+
+        <li><%=request.getAttribute("Emp1")%></li>
+        <li><%=request.getAttribute("Emp2")%></li>
+    </ul>
 </body>
 </html>

@@ -13,6 +13,7 @@ import java.io.PrintWriter;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.HashMap;
+import java.util.Map;
 
 public class FrontServlet extends HttpServlet {
 
@@ -44,6 +45,18 @@ public class FrontServlet extends HttpServlet {
             Method method=object.getClass().getMethod(mapping.getMethod());
             ModelView result=(ModelView) method.invoke(object); //Class ModelView
             out.println("<br>"+result.getClass());
+
+//            Envoi Donnees ModelView vers l'url
+            for (Map.Entry<String,Object> set: result.getData().entrySet()){
+                req.setAttribute(set.getKey(),set.getValue());
+            }
+
+            for (Map.Entry<String,Object> set: result.getData().entrySet()){
+                out.println("<br>"+req.getAttribute(set.getKey()));
+            }
+
+//            out.println("<br>"+req.getAttribute("Emp2"));
+
             req.getRequestDispatcher(result.getUrl()).forward(req,resp);
         }
     }
