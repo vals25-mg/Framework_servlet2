@@ -34,7 +34,6 @@ public class Mapping {
     public Mapping() {
     }
 
-
     public static String[] get_java_files_name(String filePath){
         // array string to put all file names
         String [] java_files_name=new String[0];

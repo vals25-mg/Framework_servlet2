@@ -5,15 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e6ae93e1-60aa-496c-af4d-4eafe5358b72" name="Changes" comment="commit sprint5">
+      <change afterPath="$PROJECT_DIR$/Test_Framework/src/main/java/objets/Employe.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test_Framework/src/main/webapp/WEB-INF/classes/objets/Employe.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test_Framework/src/main/webapp/form.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Framework/src/main/java/etu2034/classes/etu2034/framework/Mapping$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Framework/src/main/java/etu2034/classes/etu2034/framework/Mapping$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Framework/src/main/java/etu2034/classes/etu2034/framework/Mapping.class" beforeDir="false" afterPath="$PROJECT_DIR$/Framework/src/main/java/etu2034/classes/etu2034/framework/Mapping.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Framework/src/main/java/etu2034/classes/etu2034/framework/MethodAnnotation.class" beforeDir="false" afterPath="$PROJECT_DIR$/Framework/src/main/java/etu2034/classes/etu2034/framework/MethodAnnotation.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Framework/src/main/java/etu2034/classes/etu2034/framework/ModelView.class" beforeDir="false" afterPath="$PROJECT_DIR$/Framework/src/main/java/etu2034/classes/etu2034/framework/ModelView.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Framework/src/main/java/etu2034/classes/etu2034/framework/servlet/FrontServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/Framework/src/main/java/etu2034/classes/etu2034/framework/servlet/FrontServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Framework/src/main/java/etu2034/framework/ModelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/Framework/src/main/java/etu2034/framework/ModelView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Framework/src/main/java/etu2034/framework/Mapping.java" beforeDir="false" afterPath="$PROJECT_DIR$/Framework/src/main/java/etu2034/framework/Mapping.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Framework/src/main/java/etu2034/framework/servlet/FrontServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/Framework/src/main/java/etu2034/framework/servlet/FrontServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test_Framework/src/main/java/objets/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test_Framework/src/main/java/objets/Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test_Framework/src/main/webapp/WEB-INF/classes/objets/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/Test_Framework/src/main/webapp/WEB-INF/classes/objets/Test.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test_Framework/src/main/webapp/WEB-INF/lib/framework.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Test_Framework/src/main/webapp/WEB-INF/lib/framework.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test_Framework/src/main/webapp/view.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/Test_Framework/src/main/webapp/view.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_Framework/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/Test_Framework/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script.sh" beforeDir="false" afterPath="$PROJECT_DIR$/script.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,7 +31,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="sprint4" />
+        <entry key="$PROJECT_DIR$" value="sprint6" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -36,20 +44,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/valisoa/Documents/GitHub/Project&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "sprint7",
+    "last_opened_file_path": "/Users/valisoa/Documents/GitHub/Project",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -66,7 +76,11 @@
       <workItem from="1681453746031" duration="1350000" />
       <workItem from="1681455141482" duration="2006000" />
       <workItem from="1681732730713" duration="12014000" />
-      <workItem from="1681813780835" duration="319000" />
+      <workItem from="1681813780835" duration="1245000" />
+      <workItem from="1681821490234" duration="29000" />
+      <workItem from="1683610348064" duration="5701000" />
+      <workItem from="1686030291268" duration="1967000" />
+      <workItem from="1686033735727" duration="8103000" />
     </task>
     <task id="LOCAL-00001" summary="commit sprint1">
       <created>1680618493845</created>
