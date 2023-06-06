@@ -1,16 +1,23 @@
 # Framework_servlet2
 
-### - SPRINT1:
+### - framework.jar:
 
 
 ##### - Mise en place environnement:
-                - Création Github Repository
-                - Création Branche "Sprint1"
-                - Clone branche "Sprint1"    
+                - importation etu2034.framework.MethodAnnotation
+                - importation etu2034.framework.ModelView;
+                - import jakarta.servlet.*   
 
-##### - Création FrontServlet (package etu2034.framework):
-                - Classe
-                - web.xml
+##### - web.xml:
+    <servlet>
+        <servlet-name>FrontServlet</servlet-name>
+        <servlet-class>etu2034.framework.servlet.FrontServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>FrontServlet</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
 
 
 ### -SPRINT2:
