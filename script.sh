@@ -21,20 +21,19 @@ LIB_DIR="/Users/valisoa/Documents/GitHub/Project/Test_Framework/src/main/webapp/
 #Compilation des fichiers java
 echo "Compilation des fichiers java:"
 echo "\t - MethodAnnotation.java"
-javac -classpath $CLASSPATH:"$CLASS_DIR/$ANNOTATION" -d "$CLASS_DIR" "$ANNOTATION"
+javac -parameters -classpath $CLASSPATH:"$CLASS_DIR/$ANNOTATION" -d "$CLASS_DIR" "$ANNOTATION"
 echo "\t - Mapping.java"
-javac -classpath $CLASSPATH:"$CLASS_DIR/$MAPPING" -d "$CLASS_DIR" "$MAPPING"
+javac -parameters -classpath $CLASSPATH:"$CLASS_DIR/$MAPPING" -d "$CLASS_DIR" "$MAPPING"
 echo "\t - FrontServlet.java"
-javac -classpath $CLASSPATH:"$CLASS_DIR/$FRONT_SERVLET" -d "$CLASS_DIR" "$FRONT_SERVLET"
+javac -parameters -classpath $CLASSPATH:"$CLASS_DIR/$FRONT_SERVLET" -d "$CLASS_DIR" "$FRONT_SERVLET"
 echo "\t - ModelView.java"
-javac -classpath $CLASSPATH:"$CLASS_DIR/$MODELVIEW" -d "$CLASS_DIR" "$MODELVIEW"
+javac -parameters -classpath $CLASSPATH:"$CLASS_DIR/$MODELVIEW" -d "$CLASS_DIR" "$MODELVIEW"
 #Création fichier jar
 cd $CLASS_DIR
 jar -cf $LIB_DIR$JAR_FILE "etu2034"
 echo "Les contenus du fichier $JAR_FILE:"
 jar -tf $LIB_DIR$JAR_FILE
 
-#Mila copie anaty fichier temp
 
 #Effacer les classes dans le dossier classes
 rm -rf CLASS_DIR"*"
@@ -49,17 +48,25 @@ TOMCAT="/Applications/apache-tomcat-10.0.27/webapps/"
 WEBAPP="/Users/valisoa/Documents/GitHub/Project/Test_Framework/src/main/webapp/WEB-INF/classes/"
 WEBINF="/Users/valisoa/Documents/GitHub/Project/Test_Framework/src/main/webapp/"
 JAVA_FILE="/Users/valisoa/Documents/GitHub/Project/Test_Framework/src/main/java/"
+WAR_FILE="/Applications/apache-tomcat-10.0.27/webapps/test_framework.war"
 
 #Compilation du fichier java dans le repertoire Test_Framework
 #echo $JAVA_FILE"*.java"
-javac -classpath $CLASSPATH:$WEBAPP -d $WEBAPP $JAVA_FILE"objets/Test.java"
-javac -classpath $CLASSPATH:$WEBAPP -d $WEBAPP $JAVA_FILE"objets/Employe.java"
+javac -parameters -classpath $CLASSPATH:$WEBAPP -d $WEBAPP $JAVA_FILE"objets/Test.java"
+javac -parameters -classpath $CLASSPATH:$WEBAPP -d $WEBAPP $JAVA_FILE"objets/Employe.java"
 
-cd $WEBINF
+#Copie des fichiers dans dossier temporaire
+#cd $WEBINF
+echo "Placement:"
 pwd
+ cp -R  /Users/valisoa/Documents/GitHub/Project/Test_Framework/src/main/webapp/*  ~/Documents/temporary
+cd ~/Documents/temporary
+pwd
+
 ls
-rm -rf /Applications/apache-tomcat-10.0.27/webapps/test_framework.war
-jar -cf /Applications/apache-tomcat-10.0.27/webapps/test_framework.war ./*
+rm -rf $WAR_FILE
+jar -cf $WAR_FILE .
+jar -tf $WAR_FILE
 cd /Applications/apache-tomcat-10.0.27/webapps/test_framework/
 pwd
 ls

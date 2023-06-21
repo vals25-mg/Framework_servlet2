@@ -37,8 +37,30 @@ public class Employe {
     }
 
     @MethodAnnotation(url = "save-emp")
-    public void save(){
-        System.out.println("<br>"+this.getNom());
-        System.out.println("<br>"+this.getSalaire());
+    public ModelView save(int id){
+        ModelView mv=new ModelView("view.jsp");
+//        System.out.println("<br>"+this.getNom());
+//        System.out.println("<br>"+this.getSalaire());
+        mv.addItem("id",id);
+        return mv;
+    }
+
+    @MethodAnnotation(url = "save-emp")
+    public ModelView save(String id){
+        ModelView mv=new ModelView("view.jsp");
+//        System.out.println("<br>"+this.getNom());
+//        System.out.println("<br>"+this.getSalaire());
+        mv.addItem("id",id);
+        return mv;
+    }
+
+    @MethodAnnotation(url = "two-args")
+    public ModelView twoArgs(int id,boolean iswork){
+        ModelView mv=new ModelView("view.jsp");
+//        System.out.println("<br>"+this.getNom());
+//        System.out.println("<br>"+this.getSalaire());
+        mv.addItem("id",id);
+        mv.addItem("iswork",iswork);
+        return mv;
     }
 }
