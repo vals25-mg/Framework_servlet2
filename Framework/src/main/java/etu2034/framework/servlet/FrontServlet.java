@@ -1,8 +1,10 @@
 package etu2034.framework.servlet;
 
+import etu2034.framework.FileUpload;
 import etu2034.framework.Mapping;
 import etu2034.framework.ModelView;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -13,9 +15,19 @@ import java.io.PrintWriter;
 import java.lang.reflect.*;
 import java.util.*;
 
+@MultipartConfig
 public class FrontServlet extends HttpServlet {
 
     HashMap<String, Mapping> MappingUrls;
+    Vector<FileUpload> fileUploads;
+
+    public Vector<FileUpload> getFileUploads() {
+        return fileUploads;
+    }
+
+    public void setFileUploads(Vector<FileUpload> fileUploads) {
+        this.fileUploads = fileUploads;
+    }
 
     public HashMap<String, Mapping> getMappingUrls() {
         return MappingUrls;

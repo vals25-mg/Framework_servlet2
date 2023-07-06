@@ -13,8 +13,8 @@
     <title>Formulaire</title>
 </head>
 <body>
-
-    <div class="container">
+<br><br>
+    <div class="container w-50 shadow p-4 rounded-3 ">
         <h1>Ajouter Employé</h1>
         <form action="save-emp" method="post">
             <div class="mb-3">

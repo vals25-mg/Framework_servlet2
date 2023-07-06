@@ -8,6 +8,7 @@ FRONT_SERVLET="etu2034/framework/servlet/FrontServlet.java"
 MAPPING="etu2034/framework/Mapping.java"
 ANNOTATION="etu2034/framework/MethodAnnotation.java"
 MODELVIEW="etu2034/framework/ModelView.java"
+FILEUPLOAD="etu2034/framework/FileUpload.java"
 
 #L'emplacement où on doit placer chaque fichier compilé
 CLASS_DIR="/Users/valisoa/Documents/GitHub/Project/Framework/src/main/java/etu2034/classes/"
@@ -21,13 +22,16 @@ LIB_DIR="/Users/valisoa/Documents/GitHub/Project/Test_Framework/src/main/webapp/
 #Compilation des fichiers java
 echo "Compilation des fichiers java:"
 echo "\t - MethodAnnotation.java"
-javac -parameters -classpath $CLASSPATH:"$CLASS_DIR/$ANNOTATION" -d "$CLASS_DIR" "$ANNOTATION"
+javac -parameters -classpath $CLASSPATH:"$CLASS_DIR$ANNOTATION" -d "$CLASS_DIR" "$ANNOTATION"
 echo "\t - Mapping.java"
-javac -parameters -classpath $CLASSPATH:"$CLASS_DIR/$MAPPING" -d "$CLASS_DIR" "$MAPPING"
+javac -parameters -classpath $CLASSPATH:"$CLASS_DIR$MAPPING" -d "$CLASS_DIR" "$MAPPING"
 echo "\t - FrontServlet.java"
-javac -parameters -classpath $CLASSPATH:"$CLASS_DIR/$FRONT_SERVLET" -d "$CLASS_DIR" "$FRONT_SERVLET"
+javac -parameters -classpath $CLASSPATH:"$CLASS_DIR$FRONT_SERVLET" -d "$CLASS_DIR" "$FRONT_SERVLET"
 echo "\t - ModelView.java"
-javac -parameters -classpath $CLASSPATH:"$CLASS_DIR/$MODELVIEW" -d "$CLASS_DIR" "$MODELVIEW"
+javac -parameters -classpath $CLASSPATH:"$CLASS_DIR$MODELVIEW" -d "$CLASS_DIR" "$MODELVIEW"
+echo "\t - FileUpload.java: "$CLASS_DIR$FILEUPLOAD
+javac -parameters -classpath $CLASSPATH:"$CLASS_DIR$FILEUPLOAD" -d "$CLASS_DIR" "$FILEUPLOAD"
+
 #Création fichier jar
 cd $CLASS_DIR
 jar -cf $LIB_DIR$JAR_FILE "etu2034"
@@ -70,6 +74,9 @@ jar -tf $WAR_FILE
 cd /Applications/apache-tomcat-10.0.27/webapps/test_framework/
 pwd
 ls
+
+/Applications/apache-tomcat-10.0.27/bin/shutdown.sh
+/Applications/apache-tomcat-10.0.27/bin/startup.sh
 
 
 
