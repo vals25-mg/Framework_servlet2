@@ -1,5 +1,6 @@
 package objets;
 
+import etu2034.framework.FileUpload;
 import etu2034.framework.MethodAnnotation;
 import etu2034.framework.ModelView;
 
@@ -8,6 +9,15 @@ import java.io.PrintWriter;
 public class Employe {
     String nom;
     double salaire;
+    FileUpload profil;
+
+    public FileUpload getProfil() {
+        return profil;
+    }
+
+    public void setProfil(FileUpload profil) {
+        this.profil = profil;
+    }
 
     public String getNom() {
         return nom;
@@ -61,6 +71,15 @@ public class Employe {
 //        System.out.println("<br>"+this.getSalaire());
         mv.addItem("id",id);
         mv.addItem("iswork",iswork);
+        return mv;
+    }
+
+    @MethodAnnotation(url = "show-array")
+    public ModelView showArray(int[] array){
+        ModelView mv= new ModelView("view.jsp");
+        for (int i = 0; i < array.length; i++) {
+            mv.addItem(String.valueOf(i),array);
+        }
         return mv;
     }
 }
