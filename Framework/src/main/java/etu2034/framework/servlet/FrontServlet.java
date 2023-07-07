@@ -313,4 +313,11 @@ public class FrontServlet extends HttpServlet {
             }
         }
     }
+
+    public String changeToJson(ModelView mv) {
+        String sessionToJson = "test";
+        Gson gson = new Gson();
+        sessionToJson = gson.toJson(mv.getData());
+        return sessionToJson;
+    }
 }
