@@ -8,10 +8,7 @@ import etu2034.framework.MethodAnnotation;
 import etu2034.framework.ModelView;
 import etu2034.framework.Singleton;
 
-/**
- *
- * @author mitantsoa
- */
+
 @Singleton
 public class Dept {
     int x = 1;
