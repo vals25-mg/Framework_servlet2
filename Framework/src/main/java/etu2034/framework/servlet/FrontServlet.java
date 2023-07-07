@@ -1,15 +1,16 @@
 package etu2034.framework.servlet;
 
+import com.google.gson.Gson;
 import etu2034.framework.FileUpload;
 import etu2034.framework.Mapping;
 import etu2034.framework.ModelView;
 import etu2034.framework.Scope;
 import etu2034.framework.Singleton;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.MultipartConfig;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.MultipartConfig;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.File;
 import java.io.IOException;
@@ -261,8 +262,6 @@ public class FrontServlet extends HttpServlet {
 
     /*
      * sprint 10
-     * atsoin'lah rehefa le micheck an'le fichier rehetra
-     * url essai de la class Dept ny test an'ito
      */
 
     public void checkSingleton(Class classToChecked) {
@@ -284,7 +283,7 @@ public class FrontServlet extends HttpServlet {
     /*
      * jerena raha misy sessions ao anaty modelView
      * raha toa ka misy de atsoina i fillSessions
-     * le checkAuthorisation atsoy ao anaty processRequest, efa misy condition
+     * le checkAuthorisation  ao anaty processRequest, efa misy condition
      */
 
     public void fillSessions(HttpServletRequest req, HashMap<String, Object> sessionsFromDataObject) {
@@ -316,7 +315,7 @@ public class FrontServlet extends HttpServlet {
 
     // ----- sprint 13 -------
     /*
-     * mila Gson.jar
+     * Gson.jar
      */
     public String changeToJson(ModelView mv) {
         String sessionToJson = "test";
@@ -328,8 +327,6 @@ public class FrontServlet extends HttpServlet {
 
     // ---- sprint 14 ----
     /*
-     * asian'lah condition oe tsy modelView le retour
-     * ataon'lah out.print fotsiny le data
      */
     public String changeToJson(Object ob) {
         String objectToJson = "test";
