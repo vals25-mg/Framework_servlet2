@@ -47,14 +47,12 @@ public class FrontServlet extends HttpServlet {
     public void setClasseInstances(HashMap<String, Object> classeInstances) {
         this.classeInstances = classeInstances;
     }
-    
-    
 
     public void processRequest(HttpServletRequest req, HttpServletResponse resp) throws Exception {
         resp.setContentType("text/html");
         PrintWriter out = resp.getWriter();
 
-//        file directory
+        // file directory
 
         String[] separed = req.getRequestURI().split("/");
         out.println("<br>" + req.getRequestURI());
@@ -69,41 +67,40 @@ public class FrontServlet extends HttpServlet {
             try {
                 Method method = rightMethod(req, object, mapping.getMethod(), out);
                 out.println("<br>Methode: " + method.getName() + "/ type de retour :" + method.getReturnType());
-                //            Si le type de retour est ModelView
+                // Si le type de retour est ModelView
                 if (method.getReturnType().equals(ModelView.class)) {
-//                    Si la methode n'a pas d'argument
+                    // Si la methode n'a pas d'argument
                     if (method.getParameters().length == 0) {
                         showList(req, resp, object, method);
                     }
-//                    Si la methode a un certain argument
+                    // Si la methode a un certain argument
                     else {
-//                        String[] parameters = Arrays.stream(method.getParameters())
-//                                .map(java.lang.reflect.Parameter::getName)
-//                                .toArray(String[]::new);
-                        Object[] parameters=findArgsValues(method,req);
+                        // String[] parameters = Arrays.stream(method.getParameters())
+                        // .map(java.lang.reflect.Parameter::getName)
+                        // .toArray(String[]::new);
+                        Object[] parameters = findArgsValues(method, req);
                         ModelView result = (ModelView) method.invoke(object, parameters);
                         for (Map.Entry<String, Object> set : result.getData().entrySet()) {
-                            out.print("<br>"+set.getValue());
+                            out.print("<br>" + set.getValue());
                         }
                     }
                 }
 
-//                else throw new Exception("La méthode doit retourner un ModelView");
+                // else throw new Exception("La méthode doit retourner un ModelView");
             } catch (Exception e) {
                 out.println("<br>Erreur: " + e.getMessage());
             }
 
-
-//            if (method.getReturnType().equals(Void.TYPE)){
-//                checkAvailable(object,req,out);
-//                showObjectContent(object,out);
-//            }
+            // if (method.getReturnType().equals(Void.TYPE)){
+            // checkAvailable(object,req,out);
+            // showObjectContent(object,out);
+            // }
             out.println("<br>Fin");
         }
     }
 
-
-    public void showObjectContent(Object object, PrintWriter out) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+    public void showObjectContent(Object object, PrintWriter out)
+            throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         Field[] fields = object.getClass().getDeclaredFields();
         out.println("<br> Les contenus :");
         for (Field field : fields) {
@@ -122,9 +119,12 @@ public class FrontServlet extends HttpServlet {
                 out.print("<br>" + fields[i].getName() + " et " + paramName);
                 String arg = req.getParameter(paramName);
                 if (fields[i].getName().equals(paramName)) {
-                    out.print("<br>" + fields[i].getName() + " == set" + upperCaseFirstLetter(paramName) + "(" + req.getParameter(paramName) + ")");
-                    object.getClass().getDeclaredMethod("set" + upperCaseFirstLetter(paramName), fields[i].getType()).invoke(object, getTypeChanged(fields[i], arg));
-                    out.print("<br>---" + object.getClass().getDeclaredMethod("get" + upperCaseFirstLetter(paramName)).invoke(object));
+                    out.print("<br>" + fields[i].getName() + " == set" + upperCaseFirstLetter(paramName) + "("
+                            + req.getParameter(paramName) + ")");
+                    object.getClass().getDeclaredMethod("set" + upperCaseFirstLetter(paramName), fields[i].getType())
+                            .invoke(object, getTypeChanged(fields[i], arg));
+                    out.print("<br>---" + object.getClass().getDeclaredMethod("get" + upperCaseFirstLetter(paramName))
+                            .invoke(object));
                     break;
                 }
             }
@@ -143,7 +143,6 @@ public class FrontServlet extends HttpServlet {
             throw new RuntimeException(e);
         }
     }
-
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -167,19 +166,28 @@ public class FrontServlet extends HttpServlet {
     }
 
     public Object getTypeChanged(Field field, String arg) {
-        if (field.getType() == double.class) return Double.parseDouble(arg);
-        if (field.getType() == int.class) return Integer.parseInt(arg);
-        if (field.getType() == boolean.class) return Boolean.parseBoolean(arg);
+        if (field.getType() == double.class)
+            return Double.parseDouble(arg);
+        if (field.getType() == int.class)
+            return Integer.parseInt(arg);
+        if (field.getType() == boolean.class)
+            return Boolean.parseBoolean(arg);
         return arg;
     }
 
     public Object getTypeChanged(Type type, String value) {
-        if (type == double.class) return Double.parseDouble(value);
-        if (type == int.class) return Integer.parseInt(value);
-        if (type == float.class) return Float.parseFloat(value);
-        if (type == long.class) return Long.parseLong(value);
-        if (type == boolean.class) return Boolean.parseBoolean(value);
-        if (type == java.sql.Date.class) return java.sql.Date.valueOf(value);
+        if (type == double.class)
+            return Double.parseDouble(value);
+        if (type == int.class)
+            return Integer.parseInt(value);
+        if (type == float.class)
+            return Float.parseFloat(value);
+        if (type == long.class)
+            return Long.parseLong(value);
+        if (type == boolean.class)
+            return Boolean.parseBoolean(value);
+        if (type == java.sql.Date.class)
+            return java.sql.Date.valueOf(value);
         return value;
     }
 
@@ -189,13 +197,12 @@ public class FrontServlet extends HttpServlet {
         Parameter[] parameters = methodParameters;
         for (int i = 0; i < values.length; i++) {
             String paramNameSimple = parameters[i].getName();
-            values[i]=getTypeChanged(parameters[i].getType(),req.getParameter(paramNameSimple));
+            values[i] = getTypeChanged(parameters[i].getType(), req.getParameter(paramNameSimple));
         }
         return values;
     }
 
-
-    //    Mamadika null ny attributs rehetra anah object iray
+    // Mamadika null ny attributs rehetra anah object iray
     public void reset(Object object) throws Exception {
         Field[] fields = object.getClass().getDeclaredFields();
         Method methodSet = null;
@@ -219,7 +226,8 @@ public class FrontServlet extends HttpServlet {
         return true;
     }
 
-    public Method rightMethod(HttpServletRequest request, Object object, String methodName, PrintWriter out) throws Exception {
+    public Method rightMethod(HttpServletRequest request, Object object, String methodName, PrintWriter out)
+            throws Exception {
         Method method = null;
         Method[] methods = object.getClass().getDeclaredMethods();
         out.println("<br>Taille tableau methods: " + methods.length);
@@ -233,13 +241,13 @@ public class FrontServlet extends HttpServlet {
         return method;
     }
 
+    public void showList(HttpServletRequest req, HttpServletResponse resp, Object object, Method method)
+            throws Exception {
 
-    public void showList(HttpServletRequest req, HttpServletResponse resp, Object object, Method method) throws Exception {
-
-        ModelView result = (ModelView) method.invoke(object); //Class ModelView
+        ModelView result = (ModelView) method.invoke(object); // Class ModelView
         resp.getWriter().println("<br>" + result.getClass());
 
-        //            Envoi Données ModelView vers l'url
+        // Envoi Données ModelView vers l'url
         for (Map.Entry<String, Object> set : result.getData().entrySet()) {
             req.setAttribute(set.getKey(), set.getValue());
         }
@@ -247,16 +255,16 @@ public class FrontServlet extends HttpServlet {
         for (Map.Entry<String, Object> set : result.getData().entrySet()) {
             resp.getWriter().println("<br>" + req.getAttribute(set.getKey()));
         }
-//        Renvoie a la prochaine page
+        // Renvoie a la prochaine page
         req.getRequestDispatcher(result.getUrl()).forward(req, resp);
     }
-    
+
     /*
-        sprint 10
-        atsoin'lah rehefa le micheck an'le fichier rehetra
-        url essai de la class Dept ny test an'ito
-    */
-    
+     * sprint 10
+     * atsoin'lah rehefa le micheck an'le fichier rehetra
+     * url essai de la class Dept ny test an'ito
+     */
+
     public void checkSingleton(Class classToChecked) {
         if (classToChecked.isAnnotationPresent(Singleton.class)) {
             classeInstances.put(classToChecked.getName(), null);
@@ -272,13 +280,13 @@ public class FrontServlet extends HttpServlet {
         }
         return classToChecked.newInstance();
     }
-    
+
     /*
-        jerena raha misy sessions ao anaty modelView
-        raha toa ka misy de atsoina i fillSessions
-        le checkAuthorisation atsoy ao anaty processRequest, efa misy condition
-    */
-    
+     * jerena raha misy sessions ao anaty modelView
+     * raha toa ka misy de atsoina i fillSessions
+     * le checkAuthorisation atsoy ao anaty processRequest, efa misy condition
+     */
+
     public void fillSessions(HttpServletRequest req, HashMap<String, Object> sessionsFromDataObject) {
         for (Map.Entry<String, Object> entry : sessionsFromDataObject.entrySet()) {
             if (sessions.containsValue(entry.getKey())) {
@@ -286,7 +294,7 @@ public class FrontServlet extends HttpServlet {
             }
         }
     }
-    
+
     public void checkAuthorisation(Method m, HttpServletRequest req) throws Exception {
         if (m.isAnnotationPresent(Scope.class)) {
             int hierarchieForMethod = m.getAnnotation(Scope.class).hierarchie();
@@ -299,16 +307,17 @@ public class FrontServlet extends HttpServlet {
             int userProfilHierarchie = (int) req.getSession().getAttribute(sessionProfilName);
             if (hierarchieForMethod > userProfilHierarchie) {
                 String exceptionMessage = "Cette méthode ne peut etre appellée par vous ";
-                String exceptionExplanation = "vous : " + userProfilHierarchie + " --- la fonction requiert : " + hierarchieForMethod;
+                String exceptionExplanation = "vous : " + userProfilHierarchie + " --- la fonction requiert : "
+                        + hierarchieForMethod;
                 throw new Exception(exceptionMessage + "------" + exceptionExplanation);
             }
         }
     }
-    
+
     // ----- sprint 13 -------
     /*
-        mila Gson.jar
-    */
+     * mila Gson.jar
+     */
     public String changeToJson(ModelView mv) {
         String sessionToJson = "test";
         Gson gson = new Gson();
@@ -316,4 +325,17 @@ public class FrontServlet extends HttpServlet {
         return sessionToJson;
     }
     // ---- fin sprint 13 ----
+
+    // ---- sprint 14 ----
+    /*
+     * asian'lah condition oe tsy modelView le retour
+     * ataon'lah out.print fotsiny le data
+     */
+    public String changeToJson(Object ob) {
+        String objectToJson = "test";
+        Gson gson = new Gson();
+        objectToJson = gson.toJson(ob);
+        return objectToJson;
+    }
+
 }
