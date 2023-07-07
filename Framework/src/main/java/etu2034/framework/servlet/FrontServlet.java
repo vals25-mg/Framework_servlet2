@@ -3,6 +3,7 @@ package etu2034.framework.servlet;
 import etu2034.framework.FileUpload;
 import etu2034.framework.Mapping;
 import etu2034.framework.ModelView;
+import etu2034.framework.Scope;
 import etu2034.framework.Singleton;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -21,6 +22,7 @@ public class FrontServlet extends HttpServlet {
     HashMap<String, Mapping> MappingUrls;
     Vector<FileUpload> fileUploads;
     HashMap<String, Object> classeInstances;
+    HashMap<String, Object> sessions;
 
     public Vector<FileUpload> getFileUploads() {
         return fileUploads;
@@ -279,4 +281,36 @@ public class FrontServlet extends HttpServlet {
         return classToChecked.newInstance();
     }
 
+    /*
+     * jerena raha misy sessions ao anaty modelView
+     * raha toa ka misy de atsoina i fillSessions
+     * le checkAuthorisation atsoy ao anaty processRequest, efa misy condition
+     */
+
+    public void fillSessions(HttpServletRequest req, HashMap<String, Object> sessionsFromDataObject) {
+        for (Map.Entry<String, Object> entry : sessionsFromDataObject.entrySet()) {
+            if (sessions.containsValue(entry.getKey())) {
+                req.getSession().setAttribute(entry.getKey(), entry.getValue());
+            }
+        }
+    }
+
+    public void checkAuthorisation(Method m, HttpServletRequest req) throws Exception {
+        if (m.isAnnotationPresent(Scope.class)) {
+            int hierarchieForMethod = m.getAnnotation(Scope.class).hierarchie();
+            String sessionProfilName = (String) sessions.get("sessionValue");
+            // check si la fonction a besoin d'un identifiant
+            if (req.getSession().getAttribute(sessionProfilName) == null) {
+                throw new Exception("cette fonction requiert une connexion");
+            }
+            // fin du checking
+            int userProfilHierarchie = (int) req.getSession().getAttribute(sessionProfilName);
+            if (hierarchieForMethod > userProfilHierarchie) {
+                String exceptionMessage = "Cette méthode ne peut etre appellée par vous ";
+                String exceptionExplanation = "vous : " + userProfilHierarchie + " --- la fonction requiert : "
+                        + hierarchieForMethod;
+                throw new Exception(exceptionMessage + "------" + exceptionExplanation);
+            }
+        }
+    }
 }

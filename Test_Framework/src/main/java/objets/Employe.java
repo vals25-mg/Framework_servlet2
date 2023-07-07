@@ -82,4 +82,26 @@ public class Employe {
         }
         return mv;
     }
+
+    /*
+     * sprint 11 :
+     * le print io soloy zavatra ze afaka mi affiche azy
+     */
+    @Scope(profil = "admin", hierarchie = 21)
+    @MethodAnnotation(url = "empSave")
+    public ModelView save() {
+        ModelView mv = new ModelView();
+        mv.setUrl("formEmp.jsp");
+        System.out.println("vous etes admin");
+        return mv;
+    }
+
+    @Scope(profil = "", hierarchie = 1)
+    @MethodAnnotation(url = "callMe")
+    public ModelView callMe2() {
+        ModelView mv = new ModelView();
+        mv.setUrl("formEmp.jsp");
+        System.out.println("vous etes un visiteur");
+        return mv;
+    }
 }
