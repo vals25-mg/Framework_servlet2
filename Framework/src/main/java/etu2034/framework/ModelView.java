@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public class ModelView {
     String url;
-    HashMap<String, Object> data;
+    HashMap<String,Object> data;
     HashMap<String, Object> sessions;
 
     public ModelView(String url, HashMap<String, Object> data) {
@@ -36,7 +36,7 @@ public class ModelView {
     public void setSessions(HashMap<String, Object> sessions) {
         this.sessions = sessions;
     }
-
+    
     public ModelView(String url) {
         this.url = url;
         this.setData(new HashMap<>());
@@ -46,7 +46,11 @@ public class ModelView {
         this.setData(new HashMap<>());
     }
 
-    public void addItem(String key, Object value) {
+    public void addItem(String key, Object value){
         this.getData().put(key, value);
+    }
+    
+    public void addSessions(String key, Object value){
+        sessions.put(key, value);
     }
 }
