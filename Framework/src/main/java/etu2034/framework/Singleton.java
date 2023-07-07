@@ -13,7 +13,6 @@ import java.lang.annotation.Target;
 
 /**
  *
- * @author mitantsoa
  */
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)

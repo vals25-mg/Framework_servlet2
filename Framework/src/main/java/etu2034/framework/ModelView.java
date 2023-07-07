@@ -1,16 +1,53 @@
 package etu2034.framework;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class ModelView {
     String url;
     HashMap<String, Object> data;
     HashMap<String, Object> sessions;
     boolean isJson = false;
+    boolean isRedirect = false;
+    boolean invalidateSession = false; // Remove all session items if true
+    List<String> removeSessions = new ArrayList<>(); // Remove specific session items
 
     public ModelView(String url, HashMap<String, Object> data) {
         this.setUrl(url);
         this.setData(data);
+    }
+
+    public boolean isJson() {
+        return isJson;
+    }
+
+    public void setJson(boolean json) {
+        isJson = json;
+    }
+
+    public boolean isRedirect() {
+        return isRedirect;
+    }
+
+    public void setRedirect(boolean redirect) {
+        isRedirect = redirect;
+    }
+
+    public boolean isInvalidateSession() {
+        return invalidateSession;
+    }
+
+    public void setInvalidateSession(boolean invalidateSession) {
+        this.invalidateSession = invalidateSession;
+    }
+
+    public List<String> getRemoveSessions() {
+        return removeSessions;
+    }
+
+    public void setRemoveSessions(List<String> removeSessions) {
+        this.removeSessions = removeSessions;
     }
 
     public HashMap<String, Object> getData() {

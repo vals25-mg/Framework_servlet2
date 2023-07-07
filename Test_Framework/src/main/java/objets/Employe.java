@@ -3,6 +3,7 @@ package objets;
 import etu2034.framework.FileUpload;
 import etu2034.framework.MethodAnnotation;
 import etu2034.framework.ModelView;
+import etu2034.framework.Scope;
 
 import java.io.PrintWriter;
 
@@ -10,6 +11,7 @@ public class Employe {
     String nom;
     double salaire;
     FileUpload profil;
+
 
     public FileUpload getProfil() {
         return profil;
@@ -85,7 +87,6 @@ public class Employe {
 
     /*
      * sprint 11 :
-     * le print io soloy zavatra ze afaka mi affiche azy
      */
     @Scope(profil = "admin", hierarchie = 21)
     @MethodAnnotation(url = "empSave")
@@ -104,4 +105,7 @@ public class Employe {
         System.out.println("vous etes un visiteur");
         return mv;
     }
+
+
+
 }
