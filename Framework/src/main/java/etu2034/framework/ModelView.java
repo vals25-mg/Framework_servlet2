@@ -4,8 +4,9 @@ import java.util.HashMap;
 
 public class ModelView {
     String url;
-    HashMap<String,Object> data;
+    HashMap<String, Object> data;
     HashMap<String, Object> sessions;
+    boolean isJson = false;
 
     public ModelView(String url, HashMap<String, Object> data) {
         this.setUrl(url);
@@ -36,7 +37,15 @@ public class ModelView {
     public void setSessions(HashMap<String, Object> sessions) {
         this.sessions = sessions;
     }
-    
+
+    public boolean getIsJson() {
+        return isJson;
+    }
+
+    public void setIsJson(boolean isJson) {
+        this.isJson = isJson;
+    }
+
     public ModelView(String url) {
         this.url = url;
         this.setData(new HashMap<>());
@@ -46,11 +55,11 @@ public class ModelView {
         this.setData(new HashMap<>());
     }
 
-    public void addItem(String key, Object value){
+    public void addItem(String key, Object value) {
         this.getData().put(key, value);
     }
-    
-    public void addSessions(String key, Object value){
+
+    public void addSessions(String key, Object value) {
         sessions.put(key, value);
     }
 }
