@@ -91,6 +91,7 @@ public class Mapping {
                     mappingUrls.put(url, new Mapping(class1.getName(), methods[j].getName()));
                 }
             }
+            
         }
         return mappingUrls;
     }
